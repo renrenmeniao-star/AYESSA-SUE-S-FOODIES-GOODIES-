@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AYESSA SUE FOODIES & GOODIES in Poblacion, Boljoon, Cebu</title>
+<meta name="description" content="Food,Snacks,Street Food,Homemade,Comfort Food,Affordable,Quality,Trendy Hoodies,Casual Wear,Local Business">
+<meta name="keyword" content="Ayessa Sue Foodie’s & Hoodies offers affordable food and trendy hoodies."
+</HEAD>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#ff0000;
+  --glass: rgba(255,255,255,0.08);
+  --card: rgba(0,0,0,0.55);
+  --accent: rgba(255,76,76,0.12);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: url("bg2.jpg") no-repeat center/cover fixed;
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:60px;
+}
+
+/* HEADER */
+.header{
+  background: rgba(0,0,0,0.55);
+  padding:36px 20px 24px;
+  text-align:center;
+  border-bottom:3px solid var(--red);
+  backdrop-filter: blur(6px);
+  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+}
+
+.header h1{
+  margin:0;
+  font-size:4vw;
+  font-weight:900;
+  color:var(--red);
+  -webkit-text-stroke:1px #fff;
+  letter-spacing:0.1vw;
+  line-height:1.1;
+}
+
+.header h2{
+  margin:8px 0 0;
+  font-size:2vw;
+  color:#fff;
+  opacity:0.9;
+  font-weight:600;
+}
+
+/* NAVIGATION */
+nav{
+  text-align:center;
+  background: var(--glass);
+  padding:16px 10px;
+  margin:12px auto;
+  max-width:900px;
+  border-radius:10px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 18px rgba(0,0,0,0.5);
+}
+
+nav a{
+  margin:0 0.5vw;
+  padding:12px 0.5vw;
+  text-decoration:none;
+  font-size:2vw;
+  font-weight:900;
+  color:#000;
+  border-radius:8px;
+  transition:all .22s ease;
+}
+
+nav a:hover{
+  transform:scale(1.05);
+  color:var(--red);
+  background:var(--accent);
+  text-shadow:0 0 12px #fff, 0 0 24px #ff6b6b;
+}
+
+/* GRID & CARDS TRIPLE COMPRESSED */
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:0 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  justify-content:center;
+  align-items:start;
+  padding:0 15px;
+}
+
+.card{
+  background:var(--card);
+  padding:12px; 
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);
+  width:70%;
+  margin:0 auto;
+}
+
+/* CARD TEXT SIZE REDUCED */
+.card h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.card p{
+  font-size:12px;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+
+form label{
+  font-size:11px;
+}
+
+form input[type='text'],
+form input[type='email'],
+form textarea{
+  width:100%;
+  padding:8px 10px;
+  border: none;
+  border-bottom:1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color:#fff;
+  font-size:12px;
+  outline:none;
+  margin-bottom:8px;
+}
+
+form input::placeholder,
+form textarea::placeholder{
+  color:transparent;
+}
+
+.btn{
+  padding:8px 14px;
+  font-size:12px;
+  display:inline-block;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--red),#ff8d8d);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(255,76,76,0.25);
+  transition:transform .18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.info-item{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  margin-bottom:8px;
+}
+
+.info-item strong{
+  min-width:90px;
+  color:#fff;
+}
+
+.socials{
+  display:flex;
+  gap:8px;
+  margin-top:6px;
+}
+
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  background:rgba(255,255,255,0.06);
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* MAP WITH RED GLOW */
+.map-glow{
+  height:160px;          
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid #ff0000; 
+  box-shadow:0 0 18px rgba(255,0,0,0.7), 0 0 32px rgba(255,0,0,0.4);
+}
+
+/* FOOTER */
+footer{
+  max-width:900px;
+  margin:30px auto 60px;
+  color:#ddd;
+  text-align:center;
+  font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+  .card{
+    width:90%;
+    padding:10px;
+  }
+  .header h1{font-size:12vw;}
+  .header h2{font-size:3.5vw;}
+  nav a{font-size:4.5vw;}
+}
+
+@media(max-width:600px){
+  .card{
+    width:95%;
+    padding:8px;
+  }
+  .header h1{font-size:16vw;}
+  .header h2{font-size:4.5vw;}
+  nav a{font-size:5.5vw;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1> AYESSA SUE'S FOODIES & GOODIES </h1>
+  <h2>For more information, contact us and enjoy goodness made fresh, warm, and heartfelt.</h2>
+</header>
+
+<nav>
+  <a href="landingpage.html">HOME</a>
+  <a href="EVENTS.html">EVENT</a>
+  <a href="Product.html">PRODUCT</a>
+  <a href="ContactUs.Html.html">CONTACT US</a>
+</nav>
+
+<main class="container">
+  <div class="grid">
+
+    <!-- GET IN TOUCH CARD -->
+    <section class="card">
+      <h3>Get in touch</h3>
+      <p>Questions, orders, or special requests? Fill in the blanks below and we'll get back to you.</p>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="row">
+          <div class="col">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="" required>
+          </div>
+          <div class="col">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="text" placeholder="">
+          </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="" required>
+
+        <label for="message">Message / Order details</label>
+        <textarea id="message" name="message" placeholder="" required></textarea>
+
+        <div style="display:flex; gap:8px; align-items:center; margin-top:6px; flex-wrap:wrap">
+          <button class="btn" type="submit">Send Message</button>
+          <span style="color:#ccc; font-size:11px">Or email us at  
+            <strong style="color:#fff">marcusyana1017@gmail.com</strong>
+          </span>
+        </div>
+      </form>
+    </section>
+
+    <!-- CONTACT DETAILS CARD -->
+    <aside class="card">
+      <h3>Contact Details</h3>
+
+      <div class="info-item">
+        <strong>Phone:</strong>
+        <div>0968 636 1003</div>
+      </div>
+
+      <div class="info-item">
+        <strong>Email:</strong>
+        <div>marcusyana1017@gmail.com</div>
+      </div>
+
+      <div class="info-item">
+        <strong>Facebook:</strong>
+        <div>Marcus Yana</div>
+      </div>
+
+      <div class="info-item">
+        <strong>Address:</strong>
+        <div>📍 At the intersection of San Pedro Street and Natalio Bacalso Avenue, Boljoon, Cebu, Philippines.</div>
+      </div>
+
+      <div style="margin-top:8px">
+        <h4 style="margin:0 0 6px">Operating Hours</h4>
+        <p style="margin:0; color:#e6e6e6">
+          Mon–Sat: 8:00 AM — 7:00 PM<br>
+          Sun: 9:00 AM — 4:00 PM
+        </p>
+      </div>
+
+      <div style="margin-top:10px">
+        <h4 style="margin:0 0 6px">Find us</h4>
+        <div id="map" class="map-glow"></div>
+      </div>
+
+      <div style="margin-top:8px">
+        <h4 style="margin:0 0 6px">Follow</h4>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">F</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> Ayessa Sue's Foodies & Goodies — All rights reserved
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  alert("Thanks, " + (form.name.value || "there") + "! Your message has been received.");
+  form.reset();
+}
+
+// GOOGLE MAPS
+function initMap() {
+  const location = { lat: 9.625404, lng: 123.481407 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: location,
+    mapTypeId: 'roadmap',
+    gestureHandling: 'greedy',
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+      position: google.maps.ControlPosition.TOP_RIGHT
+    }
+  });
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    title: "Ayessa Sue's Foodies & Goodies"
+  });
+}
+</script>
+
+<!-- Load Google Maps API (replace YOUR_API_KEY with your Google Maps API key) -->
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
+</body>
+</html>

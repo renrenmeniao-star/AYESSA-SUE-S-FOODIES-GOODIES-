@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AYESSA SUE FOODIES & GOODIES in Poblacion, Boljoon, Cebu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    
+<style>
+/* Global */
+* {box-sizing: border-box; margin:0; padding:0;}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('bg2.jpg') no-repeat center/cover fixed;
+    color: #333;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Particle Canvas */
+#particles {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index:0;
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('bg2.jpg') no-repeat center/cover fixed;
+    text-align: center;
+    overflow: hidden;
+    z-index:1;
+}
+.header::before {
+    content:"";
+    position:absolute; top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index:1;
+}
+.header h1, .header h2 {
+    position: relative;
+    z-index:2;
+}
+
+/* White Outline Function */
+.outline {
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px -2px 0 #ffffff,
+         0px  2px 0 #ffffff,
+        -2px  0px 0 #ffffff,
+         2px  0px 0 #ffffff;
+}
+
+/* Header Title */
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 88px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0b52ff;
+    animation: float 3s ease-in-out infinite;
+    text-shadow: none;
+}
+.header h1.outline { /* Apply clean white outline */
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px -2px 0 #ffffff,
+         0px  2px 0 #ffffff,
+        -2px  0px 0 #ffffff,
+         2px  0px 0 #ffffff;
+}
+
+/* Header Subtitle */
+.header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ff0000;
+    margin-top: 20px;
+    animation: slideUp 2s ease forwards, glow 3s ease-in-out infinite alternate;
+    text-shadow: 
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px -2px 0 #ffffff,
+         0px  2px 0 #ffffff,
+        -2px  0px 0 #ffffff,
+         2px  0px 0 #ffffff;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+nav a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b52ff;
+    text-decoration: none;
+    margin: 0 25px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow:
+        -1px -1px 0 #ffffff,  
+         1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 #ffffff,
+         0px -1px 0 #ffffff,
+         0px  1px 0 #ffffff,
+        -1px  0px 0 #ffffff,
+         1px  0px 0 #ffffff;
+}
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #28a745;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+nav a:hover {
+    color: #ff4444;
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Subtitle "DELICIOSO" */
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    font-weight: 700;
+    color: #28a745;
+    text-align: center;
+    margin: 50px auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px -2px 0 #ffffff,
+         0px  2px 0 #ffffff,
+        -2px  0px 0 #ffffff,
+         2px  0px 0 #ffffff;
+    animation: pulse 1.8s infinite alternate;
+}
+    
+
+/* ---------------- HISTORY SECTION ------------------ */
+.history-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 60px;
+    padding: 25px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 1.6s ease forwards;
+}
+
+.history-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; /* Reduced from 55px to 36px */
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0b52ff;
+    font-weight: 700;
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff;
+}
+
+.history-text {
+    font-size: 11px; /* smaller text */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #333;
+    text-indent: 20px; /* shorter indentation */
+}
+/* Fade animation */
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(40px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* --------------------------------------------------- */
+
+/* Gallery Grid */
+.gallery {
+    width: 90%;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 30px;
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    opacity:0;
+    transform: translateY(40px);
+}
+
+/* Animated background */
+.image-bg {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    z-index: 0;
+    background: linear-gradient(45deg, 
+        #ffdfd0, #ffe7b8, #ffd3c9, #fff2cc, #ffe0e0
+    );
+    background-size: 400% 400%;
+    animation: moveBG 8s ease infinite;
+    filter: blur(22px);
+}
+
+/* Food Image */
+.gallery-item img {
+    position: relative;
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    z-index:1;
+    border-radius:25px;
+    transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.12);
+}
+
+/* Overlay Title */
+.gallery-item::after {
+    content: attr(data-title);
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:15px 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+    font-size:24px;
+    opacity:0;
+    transition: opacity 0.5s ease;
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px -2px 0 #ffffff,
+         0px  2px 0 #ffffff,
+        -2px  0px 0 #ffffff,
+         2px  0px 0 #ffffff;
+}
+.gallery-item:hover::after {opacity:1;}
+
+/* CTA */
+.cta {
+    display:block;
+    width:max-content;
+    margin:50px auto;
+    padding:20px 50px;
+    font-size:24px;
+    font-weight:800;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    background: linear-gradient(45deg, #0b52ff,#ff4444,#28a745);
+    background-size: 200% 200%;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    animation: gradientShift 6s ease infinite;
+}
+.cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+footer {
+    text-align:center;
+    padding:40px 15px;
+    background: rgba(255,255,255,0.95);
+    box-shadow:0 -3px 20px rgba(0,0,0,0.1);
+    font-weight:500;
+    text-shadow:
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff;
+}
+
+/* Animations */
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+@keyframes slideUp {0%{opacity:0; transform:translateY(40px);}100%{opacity:1; transform:translateY(0);}}
+@keyframes glow {0%{text-shadow:2px 2px 5px rgba(255,255,255,0.4);}50%{text-shadow:2px 2px 20px rgba(255,255,255,0.8);}100%{text-shadow:2px 2px 5px rgba(255,255,255,0.4);}}
+@keyframes pulse {from{transform:scale(1);}to{transform:scale(1.08);}}
+@keyframes gradientShift {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* Responsive */
+@media (max-width:768px){
+    .header h1{font-size:60px;}
+    .header h2{font-size:32px;}
+    .sub-title{font-size:50px;}
+    .gallery-item img{height:220px;}
+    nav a{font-size:20px; margin:0 12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Particle Canvas -->
+<canvas id="particles"></canvas>
+
+<!-- Header -->
+<div class="header">
+    <h1 class="outline">AYESSA SUE'S FOODIES<br> & GOODIES</h1>
+    <h2>WHERE EVERY BITE FEELS LIKE HOME!</h2>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="Events.html">EVENT</a>
+    <a href="Product.html">PRODUCT</a>
+    <a href="ContactUs.Html.html">CONTACT US</a>
+</nav>
+
+<!-- Subtitle -->
+<div class="sub-title">DELICIOSO</div>
+
+<!-- Gallery -->
+<div class="gallery">
+    <div class="gallery-item" data-title="Chicken Adobo">
+        <div class="image-bg"></div>
+        <img src="8.jpg" alt="Food 1">
+    </div>
+    <div class="gallery-item" data-title="Ginamay Dish">
+        <div class="image-bg"></div>
+        <img src="11.jpg" alt="Food 2">
+    </div>
+    <div class="gallery-item" data-title="Pork Chop">
+        <div class="image-bg"></div>
+        <img src="13.jpg" alt="Food 3">
+    </div>
+</div>
+
+<!-- CTA -->
+<a href="product.html" class="cta">ORDER NOW</a>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Ayessa Sue's Foodies & Goodies. All Rights Reserved.
+</footer>
+
+<script>
+// Particle Effect
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let particlesArray = [];
+
+class Particle {
+    constructor(){
+        this.x = Math.random()*canvas.width;
+        this.y = Math.random()*canvas.height;
+        this.size = Math.random()*3 + 1;
+        this.speedX = Math.random()*1 - 0.5;
+        this.speedY = Math.random()*1 - 0.5;
+        this.color = 'rgba(255,255,255,0.6)';
+    }
+    update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    }
+    draw(){
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+    }
+}
+
+function initParticles(num){
+    particlesArray = [];
+    for(let i=0;i<num;i++){
+        particlesArray.push(new Particle());
+    }
+}
+function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particlesArray.forEach(p => {p.update(); p.draw();});
+    requestAnimationFrame(animateParticles);
+}
+
+initParticles(120);
+animateParticles();
+
+window.addEventListener('resize',()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles(120);
+});
+
+// Scroll fade-in for gallery
+const items = document.querySelectorAll('.gallery-item');
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if(itemTop < triggerBottom) {
+            item.style.transform = 'translateY(0)';
+            item.style.opacity = '1';
+        } else {
+            item.style.transform = 'translateY(40px)';
+            item.style.opacity = '0';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
